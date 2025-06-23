@@ -1,4 +1,3 @@
-# shourya_data_engineering-
 # 👋 Hi, I'm Shourya
 
 🎯 Data Analyst @ Department for Transport (UK) | Transitioning into Data Engineering  
