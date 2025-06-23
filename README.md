@@ -1,7 +1,7 @@
 # 👋 Hi, I'm Shourya
 
 🎯 Data Analyst @ Department for Transport (UK) | Transitioning into Data Engineering  
-💡 3+ years across public sector, healthcare & marketing | Visa Sponsored  
+💡 3+ years across public sector, healthcare & business analytics,
 🧰 Skills: Python, SQL, BigQuery, dbt, Power BI, AWS (S3, Lambda, Redshift), Airflow
 
 ## 🚀 What I'm Working On
