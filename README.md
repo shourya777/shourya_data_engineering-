@@ -9,8 +9,7 @@
 - Learning more about **cloud-based orchestration, data modeling**, and **analytics engineering best practices**
 
 ## 📌 Featured Projects
-- 🔄 **News Event Data Pipeline** *(Coming soon)* – Real-time pipeline scraping news events, transforming data via dbt, and visualizing in Power BI  
-- 🧾 **ERP Finance Extractor** *(Coming soon)* – Automates SAP/ERP finance data extraction with Python + Airflow
+- 🔄 **News Event Data Pipeline – Real-time pipeline scraping news events, transforming data via dbt, and visualizing in Power BI  
 
 ## 📫 Let’s Connect
 - 🌍 [LinkedIn – shouryasingh24](https://www.linkedin.com/in/shouryasingh24/)
