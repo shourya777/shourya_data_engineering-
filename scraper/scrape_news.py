@@ -1,19 +1,26 @@
 import requests
 from bs4 import BeautifulSoup
 
-def scrape_bbc_news():
-    url = "https://www.bbc.com/news"
+def scrape_google_news(keyword="supply chain disruption"):
+    url = f"https://news.google.com/search?q={keyword.replace(' ', '%20')}"
     response = requests.get(url)
-
-    if response.status_code == 200:
-        soup = BeautifulSoup(response.text, "html.parser")
-        headlines = [h3.get_text() for h3 in soup.find_all("h3")[:10]]  # top 10 headlines
-        return headlines
-    else:
-        return ["Failed to retrieve news"]
+    
+    if response.status_code != 200:
+        print("Failed to retrieve news.")
+        return []
+    
+    soup = BeautifulSoup(response.text, "html.parser")
+    headlines = []
+    
+    for item in soup.find_all("a", class_="DY5T1d", limit=5):  # Get top 5
+        title = item.text
+        link = "https://news.google.com" + item["href"][1:]
+        headlines.append({"title": title, "link": link})
+    
+    return headlines
 
 if __name__ == "__main__":
-    news = scrape_bbc_news()
-    print("Top BBC News Headlines:")
-    for idx, headline in enumerate(news, 1):
-        print(f"{idx}. {headline}")
+    print("🔍 Fetching latest news...")
+    news = scrape_google_news("logistics disruption")
+    for i, n in enumerate(news, 1):
+        print(f"{i}. {n['title']} → {n['link']}")
