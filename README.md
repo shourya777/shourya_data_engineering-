@@ -14,3 +14,20 @@
 ## 📫 Let’s Connect
 - 🌍 [LinkedIn – shouryasingh24](https://www.linkedin.com/in/shouryasingh24/)
 - 🗂 GitHub Projects: [github.com/shourya777](https://github.com/shourya777)
+
+# 🌍 News Scraper Project
+
+This project is a simple Python-based tool that scrapes real-time news articles from Google News based on custom keywords. It was created as part of my ongoing data engineering learning journey to practice web scraping, automation, and data handling.
+
+## 🔧 What This Project Does
+
+- Takes a list of keywords (e.g. “earthquake”, “flood”, “supply chain disruption”)
+- Scrapes related headlines from Google News
+- Cleans the results and saves them into a CSV file
+- Can be reused to automate monitoring of news across specific topics or regions
+
+## 📁 Project Structure
+
+scraper/
+├── scrape_news.py # Main script to run the scraper
+├── news_results.csv # Output file with latest results

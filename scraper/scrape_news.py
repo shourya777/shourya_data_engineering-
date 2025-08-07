@@ -1,26 +1,28 @@
 import requests
 from bs4 import BeautifulSoup
+import pandas as pd
 
-def scrape_google_news(keyword="supply chain disruption"):
-    url = f"https://news.google.com/search?q={keyword.replace(' ', '%20')}"
-    response = requests.get(url)
-    
-    if response.status_code != 200:
-        print("Failed to retrieve news.")
-        return []
-    
-    soup = BeautifulSoup(response.text, "html.parser")
-    headlines = []
-    
-    for item in soup.find_all("a", class_="DY5T1d", limit=5):  # Get top 5
-        title = item.text
-        link = "https://news.google.com" + item["href"][1:]
-        headlines.append({"title": title, "link": link})
-    
-    return headlines
+print("🔍 Fetching latest news...")
 
-if __name__ == "__main__":
-    print("🔍 Fetching latest news...")
-    news = scrape_google_news("logistics disruption")
-    for i, n in enumerate(news, 1):
-        print(f"{i}. {n['title']} → {n['link']}")
+# Sample scrape from Hacker News
+url = "https://news.ycombinator.com/"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
+
+news_data = []
+for item in soup.select(".athing"):
+    title_tag = item.select_one(".titleline a")
+    if title_tag:
+        title = title_tag.text
+        link = title_tag['href']
+        news_data.append({"title": title, "link": link})
+
+# Check if we got any data
+if not news_data:
+    print("⚠️ No news items found!")
+else:
+    # Save to CSV
+    df = pd.DataFrame(news_data)
+    df.to_csv("scraper/latest_news.csv", index=False)
+
+    print("✅ News saved to latest_news.csv")
