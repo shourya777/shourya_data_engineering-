@@ -9,7 +9,7 @@
 - Learning more about **cloud-based orchestration, data modeling**, and **analytics engineering best practices**
 
 ## 📌 Featured Projects
-- 🔄 **News Event Data Pipeline – Real-time pipeline scraping news events, transforming data via dbt, and visualizing in Power BI  
+- 🔄 News Event Data Pipeline – Real-time pipeline scraping news events, transforming data, and visualizing in Power BI  
 
 ## 📫 Let’s Connect
 - 🌍 [LinkedIn – shouryasingh24](https://www.linkedin.com/in/shouryasingh24/)
